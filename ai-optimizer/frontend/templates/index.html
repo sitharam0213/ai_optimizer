@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Representation Optimizer</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-icon">🔍</div>
+        <div class="logo-text">AI<span>Optimizer</span></div>
+      </div>
+      <div class="badge">TRACK 5 — ADVANCED</div>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1>How does AI<br><span class="highlight">perceive your store?</span></h1>
+    <p>Diagnose gaps in your Shopify store's AI-readiness. Get a ranked action plan to improve how AI shopping agents represent you.</p>
+  </div>
+
+  <!-- TRIGGER -->
+  <div class="config-panel">
+    <div class="config-title">⚙ Ready to Analyze</div>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:24px">
+      API keys are configured on the server. Click below to run a full AI representation analysis on your store.
+    </p>
+    <button class="analyze-btn" id="analyzeBtn" onclick="startAnalysis()">
+      🚀 Analyze AI Representation
+    </button>
+    <div class="error-box" id="errorBox"></div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-section" id="progressSection">
+    <div class="progress-title">Running Analysis...</div>
+    <div class="steps-list">
+      <div class="step-item" id="step1"><div class="step-icon">1</div><div><div class="step-text">Fetching store data from Shopify</div><div class="step-sub">Products, policies, collections, shop info</div></div></div>
+      <div class="step-item" id="step2"><div class="step-icon">2</div><div><div class="step-text">Scoring product AI-readiness</div><div class="step-sub">Descriptions, images, tags, pricing</div></div></div>
+      <div class="step-item" id="step3"><div class="step-icon">3</div><div><div class="step-text">Computing store-level gaps</div><div class="step-sub">Trust signals, policies, metadata</div></div></div>
+      <div class="step-item" id="step4"><div class="step-icon">4</div><div><div class="step-text">Running AI perception simulation</div><div class="step-sub">Groq Llama 3.3 70B — simulating AI shopping agent</div></div></div>
+      <div class="step-item" id="step5"><div class="step-icon">5</div><div><div class="step-text">Compiling ranked action plan</div><div class="step-sub">Prioritized improvements by impact</div></div></div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-section" id="resultsSection">
+    <div class="score-card" id="scoreCard"></div>
+    <div class="metrics-grid" id="metricsGrid"></div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon" style="background:rgba(108,99,255,0.15)">🤖</div>
+        <div><div class="section-title">AI Agent Perception</div><div class="section-sub">How an AI shopping assistant currently sees your store</div></div>
+      </div>
+      <div id="perceptionContent"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon" style="background:rgba(255,101,132,0.15)">📊</div>
+        <div><div class="section-title">AI Readiness Gaps</div><div class="section-sub">Scored across key dimensions</div></div>
+      </div>
+      <div class="gap-list" id="gapList"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon" style="background:rgba(67,233,123,0.15)">📦</div>
+        <div><div class="section-title">Product-Level Analysis</div><div class="section-sub">AI-readiness score per product</div></div>
+      </div>
+      <div style="overflow-x:auto"><table class="product-table" id="productTable"></table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon" style="background:rgba(247,151,30,0.15)">⚡</div>
+        <div><div class="section-title">Ranked Action Plan</div><div class="section-sub">Prioritized by impact on AI representation quality</div></div>
+      </div>
+      <div class="action-list" id="actionList"></div>
+    </div>
+  </div>
+
+  <footer>AI Representation Optimizer · Built for Kasparro Track 5 · Shopify Admin API + Groq Llama 3.3</footer>
+</div>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
